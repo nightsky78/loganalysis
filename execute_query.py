@@ -1,13 +1,16 @@
 from db_handling import db
 
+# set numbers of lines to show
 top_authors_line = 3
 top_articles_lines = 3
+
+# set error margin to show. Course asks for more than 1%
 error_margin = 0.01
 
 # instanciate the DB handler
 myDB = db.Db_handler()
 
-# Print the top articles
+# retrieve and print the top articles
 top_articles = myDB.retrieve_popular_articles(top_articles_lines)
 print('1. What are the most popular three articles of all time?')
 
@@ -17,7 +20,7 @@ for value in top_articles:
     i = i + 1
 print(" ")
 
-# print the top authors
+#  retrieve and print the top authors
 top_authors = myDB.retrieve_popular_authors(top_authors_line)
 print('2. Who are the most popular article authors of all time?')
 i = 0
@@ -26,7 +29,7 @@ for value in top_authors:
     i = i + 1
 print('')
 
-# print error days
+# retrieve and print days where errors are higher as error margin set above.
 error_days = myDB.retrieve_failure_days(error_margin)
 print('3. On which days did more than 1% of requests lead to errors?')
 i = 0

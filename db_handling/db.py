@@ -15,9 +15,11 @@ class Db_handler:
         self.host = dbconfig.get('dbconfig', 'db_url')
         self.port = dbconfig.get('dbconfig','db_port')
 
+        # create DB connection
         self.conn = psycopg2.connect(dbname=self.dbname, user=self.user, password=self.password, host=self.host,
                                port=self.port)
 
+    # Method reads the most popular articles
     def retrieve_popular_articles(self, top):
         self.top = top
 
@@ -27,6 +29,7 @@ class Db_handler:
         cur.execute("SELECT title, count(title) FROM v_list GROUP BY title ORDER BY count DESC LIMIT {0};".format(self.top))
         return cur.fetchall()
 
+    # Method reads the most popular authors
     def retrieve_popular_authors(self, top):
         self.top = top
 
@@ -36,6 +39,7 @@ class Db_handler:
         cur.execute("select name, count(name) FROM v_list GROUP BY name ORDER BY count DESC LIMIT {0};".format(self.top))
         return cur.fetchall()
 
+    # Method to evaluate the access stats of the website
     def retrieve_failure_days(self, margin):
         self.margin = margin
 
