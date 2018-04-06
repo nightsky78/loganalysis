@@ -16,7 +16,7 @@ print('1. What are the most popular three articles of all time?')
 
 i = 0
 for value in top_articles:
-    print (top_articles[i][0] + '  ---  ' + str(top_articles[i][1]) + ' views')
+    print(top_articles[i][0] + '  ---  ' + str(top_articles[i][1]) + ' views')
     i = i + 1
 print(" ")
 
@@ -25,7 +25,7 @@ top_authors = myDB.retrieve_popular_authors(top_authors_line)
 print('2. Who are the most popular article authors of all time?')
 i = 0
 for value in top_authors:
-    print (top_authors[i][0] + '  ---  ' + str(top_authors[i][1]) + ' views')
+    print(top_authors[i][0] + '  ---  ' + str(top_authors[i][1]) + ' views')
     i = i + 1
 print('')
 
@@ -34,6 +34,7 @@ error_days = myDB.retrieve_failure_days(error_margin)
 print('3. On which days did more than 1% of requests lead to errors?')
 i = 0
 for value in error_days:
-    print('{0} --- {1:.2f}% errors'.format(error_days[i][0].strftime('%B %d, %Y'), error_days[i][1]*100))
+    print('{0} --- {1:.2f}% errors'.format(error_days[i][0].strftime('%B %d, %Y'),
+                                           error_days[i][1]*100))
     i = i + 1
 print('')
