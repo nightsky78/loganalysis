@@ -4,4 +4,4 @@ Files:
 ./db_handling/db.py - main class for all database operations
 ./DB.config - contains the connection parameters for the database
 ./execute_query.py - contains code to call DB class and print results
-./store_status_count.sql - create views in the database required for execution of the code 
+./create_views.sql - create views in the database required for execution of the code 

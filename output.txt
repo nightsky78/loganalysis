@@ -1,0 +1,17 @@
+/Users/johanneshettig/PycharmProjects/FSND/venv/bin/python /Users/johanneshettig/PycharmProjects/FSND/news_project/execute_query.py
+  """)
+1. What are the most popular three articles of all time?
+Candidate is jerk, alleges rival  ---  342102 views
+Bears love berries, alleges bear  ---  256365 views
+Bad things gone, say good people  ---  171762 views
+ 
+2. Who are the most popular article authors of all time?
+Ursula La Multa  ---  512805 views
+Rudolf von Treppenwitz  ---  427781 views
+Anonymous Contributor  ---  171762 views
+
+3. On which days did more than 1% of requests lead to errors?
+July 17, 2016 --- 2.26% errors
+
+
+Process finished with exit code 0
