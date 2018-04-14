@@ -8,7 +8,11 @@ Prerequisite: Set up DB as described in the Udacity project outline.
 3. run python3 execute_query,py
 
 Files:
-./db_handling/db.py - main class for all database operations
+./db.py - main class for all database operations
 ./DB.config - contains the connection parameters for the database
 ./execute_query.py - contains code to call DB class and print results
-./create_views.sql - create views in the database required for execution of the code 
+./create_views.sql - create views in the database required for execution of the code
+./readme.md - this file
+./output.txt - sample output after running this programm
+./groupbyip.sql - sql snippet to possibly change the script to
+  count multiple accesses from the same IP as one access.
