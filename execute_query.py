@@ -1,4 +1,7 @@
-from db_handling import db
+#!/usr/bin/env python3
+"""Print query results for news log DB."""
+
+import db
 
 # set numbers of lines to show
 top_authors_line = 3
@@ -8,7 +11,7 @@ top_articles_lines = 3
 error_margin = 0.01
 
 # instanciate the DB handler
-myDB = db.Db_handler()
+myDB = db.DbHandler()
 
 # retrieve and print the top articles
 top_articles = myDB.retrieve_popular_articles(top_articles_lines)
@@ -34,7 +37,8 @@ error_days = myDB.retrieve_failure_days(error_margin)
 print('3. On which days did more than 1% of requests lead to errors?')
 i = 0
 for value in error_days:
-    print('{0} --- {1:.2f}% errors'.format(error_days[i][0].strftime('%B %d, %Y'),
+    print('{0} --- {1:.2f}% errors'.format(error_days[i][0].
+                                           strftime('%B %d, %Y'),
                                            error_days[i][1]*100))
     i = i + 1
 print('')

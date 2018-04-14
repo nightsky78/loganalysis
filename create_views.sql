@@ -1,9 +1,9 @@
 -- Create view for summing the status count per day
 CREATE VIEW v_status_count AS
-Select q1.date, q1.count, q2.count from
+Select q1.date, q1.count1, q2.count from
 
 (SELECT
-   count (*),
+   count (*) as count1,
    TO_CHAR(time,'YYYY-MM-DD') as "date"
 
 FROM log
@@ -29,7 +29,8 @@ CREATE VIEW v_list AS
 SELECT authors.name, authors.id, articles.title,
 log.method, log.status, log.time FROM authors, articles, log
 WHERE log.path like concat('%',articles.slug,'%')
-AND articles.author = authors.ID;
+AND articles.author = authors.ID
+AND log.status LIKE '200%';
 
 -- Just to make sure the view is accessible, set the owner of the view.
 ALTER VIEW v_status_count OWNER TO vagrant;
